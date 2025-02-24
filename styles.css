@@ -53,7 +53,7 @@ nav a:hover {
 /* Main content expands to push the footer down when needed */
 main {
     flex-grow: 1;
-    padding: 50px;
+    padding: 200px;
     padding-bottom: 80px; /* Adjust this value if needed */
     text-align: center;
 }
