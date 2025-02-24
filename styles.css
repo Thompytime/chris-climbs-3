@@ -1,15 +1,18 @@
+/* General Reset */
 body, html {
     margin: 0;
     padding: 0;
     height: 100%;
     overflow-x: hidden;
-    display: flex;
-    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
 }
 
-/* Fix body spacing issue */
-body {
-    flex-grow: 1;
+/* Main container to ensure footer sticks to the bottom */
+#container {
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
 }
 
@@ -19,14 +22,14 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    height: 40px; /* Increased height */
+    height: 50px; /* Slightly increased height */
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5px 0; /* Adjusted padding */
+    padding: 5px 0;
     z-index: 1000;
-    background-color: rgba(50, 50, 60);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.52);
+    background-color: rgba(50, 50, 60, 0.9); /* Added transparency */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 nav ul {
@@ -40,22 +43,36 @@ nav ul {
 nav a {
     color: white;
     text-decoration: none;
-    padding: 10px;
-    transition: color 0.3s;
+    padding: 12px 15px;
+    transition: color 0.3s, background-color 0.3s;
     font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
 }
 
 nav a:hover {
     color: skyblue;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
 }
 
-/* Main content expands to push the footer down when needed */
+/* Ensure main content doesn't overlap with fixed navbar */
 main {
     flex-grow: 1;
-    padding: 50px;
-    padding-bottom: 80px;
+    padding: 60px 20px; /* Increased top padding for navbar space */
+    padding-bottom: 100px; /* Extra padding to prevent overlap with footer */
     text-align: center;
+}
+
+/* Centered Image Styling */
+.image-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Footer */
@@ -64,23 +81,13 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(50, 50, 60);
+    background-color: rgba(50, 50, 60, 0.9);
     color: white;
     text-align: center;
     padding: 15px;
     width: 100%;
-    margin-top: auto;
-}
-
-footer a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-    transition: color 0.3s ease;
-}
-
-footer a:hover {
-    color: skyblue;
+    position: relative;
+    bottom: 0;
 }
 
 .footer-links {
@@ -88,18 +95,40 @@ footer a:hover {
     padding: 0;
     display: flex;
     justify-content: center;
+    gap: 15px;
     margin: 10px 0;
 }
 
 .footer-links li {
-    margin: 0 10px;
+    margin: 0;
 }
 
-/* Gallery Styles */
+footer a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: skyblue;
+}
+
+/* Social Icons */
+.footer-social a {
+    margin: 0 10px;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: skyblue;
+}
+
+/* Gallery Layout - Fully Responsive */
 .gallery-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
     justify-items: center;
     align-items: center;
     padding: 20px;
@@ -111,13 +140,16 @@ footer a:hover {
 .gallery-item {
     position: relative;
     width: 100%;
-    height: 200px;
+    max-width: 400px;
+    height: 250px;
     overflow: hidden;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
 }
 
 .gallery-item img {
@@ -125,6 +157,10 @@ footer a:hover {
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
 }
 
 /* Hover text styles */
@@ -145,4 +181,47 @@ footer a:hover {
 
 .gallery-item:hover .hover-text {
     opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        height: 45px;
+    }
+
+    nav a {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    main {
+        padding: 70px 15px;
+    }
+
+    .gallery-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        height: 40px;
+    }
+
+    nav a {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    footer {
+        height: auto;
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
 }

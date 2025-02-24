@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery</title>
+    <meta name="description" content="Explore stunning hiking destinations through our gallery of breathtaking landscapes.">
+    <title>Gallery - Chris Climbs</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
@@ -14,7 +15,7 @@
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="hikes.html">Hikes</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="gallery.html" class="active">Gallery</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="contact.html">Contact Us</a></li>
         </ul>
@@ -25,45 +26,47 @@
         <h1>Gallery</h1>
         
         <div class="gallery-container">
-            <div class="gallery-item">
-                <img src="images/Ben-Nevis.jpg" alt="Ben Nevis">
-                <div class="hover-text">Ben Nevis</div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/Acatenango.jpg" alt="Acatenango">
-                <div class="hover-text">Acatenango</div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/helvellyn.jpeg" alt="Helvellyn">
-                <div class="hover-text">Helvellyn</div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/Cerro Negro.jpg" alt="Cerro Negro">
-                <div class="hover-text">Cerro Negro</div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/Scafell Pike.jpeg" alt="Scafell Pike">
-                <div class="hover-text">Scafell Pike</div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/Fuji.jpg" alt="Fuji">
-                <div class="hover-text">Fuji</div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/Snowdonia.jpg" alt="Snowdon">
-                <div class="hover-text">Snowdon</div>
-            </div>
-            <div class="gallery-item">
-                <img src="images/Telica.png" alt="Telica">
-                <div class="hover-text">Telica</div>
-            </div>
+            <figure class="gallery-item">
+                <img src="images/Ben-Nevis.jpg" alt="Scenic view of Ben Nevis">
+                <figcaption class="hover-text">Ben Nevis</figcaption>
+            </figure>
+            <figure class="gallery-item">
+                <img src="images/helvellyn.jpeg" alt="Snowy summit of Helvellyn">
+                <figcaption class="hover-text">Helvellyn</figcaption>
+            </figure>
+            <figure class="gallery-item">
+                <img src="images/Scafell Pike.jpeg" alt="View from Scafell Pike summit">
+                <figcaption class="hover-text">Scafell Pike</figcaption>
+            </figure>
+            <figure class="gallery-item">
+                <img src="images/Snowdonia.jpg" alt="Rolling hills of Snowdonia">
+                <figcaption class="hover-text">Snowdon</figcaption>
+            </figure>
+            <figure class="gallery-item">
+                <img src="images/Acatenango.jpg" alt="Sunrise view from Acatenango volcano">
+                <figcaption class="hover-text">Acatenango</figcaption>
+            </figure>
+            <figure class="gallery-item">
+                <img src="images/Cerro Negro.jpg" alt="Volcanic landscape of Cerro Negro">
+                <figcaption class="hover-text">Cerro Negro</figcaption>
+            </figure>
+            
+            <figure class="gallery-item">
+                <img src="images/Fuji.jpg" alt="Mount Fuji at sunrise">
+                <figcaption class="hover-text">Fuji</figcaption>
+            </figure>
+            
+            <figure class="gallery-item">
+                <img src="images/Telica.png" alt="Eruption of Telica volcano">
+                <figcaption class="hover-text">Telica</figcaption>
+            </figure>
         </div>
     </main>    
 
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <p>&copy; Chris Climbs 2024. All rights reserved.</p>
+            <p>&copy; 2024 Chris Climbs. All rights reserved.</p>
             <ul class="footer-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="hikes.html">Hikes</a></li>
@@ -72,9 +75,9 @@
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
             <p class="footer-social">
-                <a href="https://facebook.com"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
-                <a href="https://x.com"><i class="fab fa-twitter"></i></a>
+                <a href="https://facebook.com" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
             </p>
         </div>
     </footer>
