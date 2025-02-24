@@ -8,6 +8,100 @@
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General styles for responsive design */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Gallery Styles */
+        .gallery img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        /* Flexbox layout for hikes */
+        #container {
+            width: 100%;
+            padding: 20px;
+        }
+
+        main {
+            margin: 0 auto;
+        }
+
+        .hike-box {
+            border: 2px solid black;
+            padding: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .hike-box h2 {
+            text-align: center;
+        }
+
+        .hike-box .info {
+            text-align: left;
+            line-height: 1.5;
+        }
+
+        /* Flexbox Layout for Two Columns */
+        .two-column-layout {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .two-column-layout > div {
+            width: 48%;
+            margin-bottom: 20px;
+        }
+
+        /* Media Queries for Small Devices */
+        @media (max-width: 768px) {
+            .two-column-layout > div {
+                width: 100%;
+            }
+
+            .hike-box {
+                padding: 15px;
+                margin-bottom: 15px;
+            }
+
+            .hike-box .info {
+                font-size: 14px;
+            }
+
+            nav ul {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+
+        /* Further responsiveness for gallery images */
+        @media (max-width: 480px) {
+            .gallery img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+        }
+    </style>
 </head>
 <body>
     <div id="container">
@@ -26,125 +120,155 @@
         <main>
             <h1>Beauty and the Beasts!</h1>
             <p>Here are two lists. The list on the left contains some of the UK's tallest hikes and the list on the right contains some of the most explosive!</p>
-            <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+            <div class="two-column-layout">
 
                 <!-- UK Mountains on Left -->
-                <div style="width: 48%; display: flex; flex-direction: column; gap: 20px;">
-
+                <div>
                     <!-- Box for Ben Nevis -->
-                    <div style="border: 2px solid black; padding: 10px; height: 350px; display: flex; flex-direction: column; justify-content: space-between;">
-                        <div style="text-align: center;">
+                    <div class="hike-box">
+                        <div>
                             <h2>1. Ben Nevis, Scotland</h2>
                         </div>
-                        <div style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
-                            <div style="text-align: left;"><strong>Location:</strong><br> Scottish Highlands</div>
-                            <div style="text-align: left;"><strong>Views:</strong><br> Panoramic views of the surrounding Highlands, including valleys, lakes, and nearby mountains.</div>
-                            <div style="text-align: left;"><strong>Time Taken to Hike:</strong><br> The hike typically takes about 6 to 8 hours round trip.</div>
-                            <div style="text-align: left;"><strong>Cost:</strong><br> Free access to the mountain, but guided hikes typically cost around £30 to £50 GBP.</div>
-                            <div style="text-align: left;"><strong>Difficulty:</strong><br> The highest mountain in the British Isles, with popular routes like the Pony Track and the more challenging North Face.</div>
+                        <div class="info">
+                            <strong>Location:</strong><br> Scottish Highlands
+                            <br><br>
+                            <strong>Views:</strong><br> Panoramic views of the surrounding Highlands, including valleys, lakes, and nearby mountains.
+                            <br><br>
+                            <strong>Time Taken to Hike:</strong><br> The hike typically takes about 6 to 8 hours round trip.
+                            <br><br>
+                            <strong>Cost:</strong><br> Free access to the mountain, but guided hikes typically cost around £30 to £50 GBP.
+                            <br><br>
+                            <strong>Difficulty:</strong><br> The highest mountain in the British Isles, with popular routes like the Pony Track and the more challenging North Face.
                         </div>
                     </div>
 
                     <!-- Box for Helvellyn -->
-                    <div style="border: 2px solid black; padding: 10px; height: 350px; display: flex; flex-direction: column; justify-content: space-between;">
-                        <div style="text-align: center;">
+                    <div class="hike-box">
+                        <div>
                             <h2>2. Helvellyn, England</h2>
                         </div>
-                        <div style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
-                            <div style="text-align: left;"><strong>Location:</strong><br> Lake District, Cumbria</div>
-                            <div style="text-align: left;"><strong>Views:</strong><br> Stunning vistas of the Lake District, with views of surrounding peaks and lakes, especially from the Striding Edge ridge.</div>
-                            <div style="text-align: left;"><strong>Time Taken to Hike:</strong><br> The hike usually takes around 6 hours, depending on the route.</div>
-                            <div style="text-align: left;"><strong>Cost:</strong><br> Free access, with guided hikes costing approximately £30 to £50 GBP.</div>
-                            <div style="text-align: left;"><strong>Difficulty:</strong><br> Famous for the thrilling Striding Edge ridge walk, with some exposed sections and a steep climb.</div>
+                        <div class="info">
+                            <strong>Location:</strong><br> Lake District, Cumbria
+                            <br><br>
+                            <strong>Views:</strong><br> Stunning vistas of the Lake District, with views of surrounding peaks and lakes, especially from the Striding Edge ridge.
+                            <br><br>
+                            <strong>Time Taken to Hike:</strong><br> The hike usually takes around 6 hours, depending on the route.
+                            <br><br>
+                            <strong>Cost:</strong><br> Free access, with guided hikes costing approximately £30 to £50 GBP.
+                            <br><br>
+                            <strong>Difficulty:</strong><br> Famous for the thrilling Striding Edge ridge walk, with some exposed sections and a steep climb.
                         </div>
                     </div>
 
                     <!-- Box for Scafell Pike -->
-                    <div style="border: 2px solid black; padding: 10px; height: 350px; display: flex; flex-direction: column; justify-content: space-between;">
-                        <div style="text-align: center;">
+                    <div class="hike-box">
+                        <div>
                             <h2>3. Scafell Pike, England</h2>
                         </div>
-                        <div style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
-                            <div style="text-align: left;"><strong>Location:</strong><br> Lake District, Cumbria</div>
-                            <div style="text-align: left;"><strong>Views:</strong><br> Dramatic views of the surrounding valleys, lakes, and neighboring peaks, including Wast Water, England's deepest lake.</div>
-                            <div style="text-align: left;"><strong>Time Taken to Hike:</strong><br> The hike typically takes around 4 to 6 hours, depending on the chosen route.</div>
-                            <div style="text-align: left;"><strong>Cost:</strong><br> Free access to the mountain, with guided hikes typically costing between £30 to £50 GBP.</div>
-                            <div style="text-align: left;"><strong>Difficulty:</strong><br> England’s highest peak, featuring rugged paths, rocky terrain, and spectacular scenery.</div>
+                        <div class="info">
+                            <strong>Location:</strong><br> Lake District, Cumbria
+                            <br><br>
+                            <strong>Views:</strong><br> Dramatic views of the surrounding valleys, lakes, and neighboring peaks, including Wast Water, England's deepest lake.
+                            <br><br>
+                            <strong>Time Taken to Hike:</strong><br> The hike typically takes around 4 to 6 hours, depending on the chosen route.
+                            <br><br>
+                            <strong>Cost:</strong><br> Free access to the mountain, with guided hikes typically costing between £30 to £50 GBP.
+                            <br><br>
+                            <strong>Difficulty:</strong><br> England’s highest peak, featuring rugged paths, rocky terrain, and spectacular scenery.
                         </div>
                     </div>
 
                     <!-- Box for Snowdon -->
-                    <div style="border: 2px solid black; padding: 10px; height: 350px; display: flex; flex-direction: column; justify-content: space-between;">
-                        <div style="text-align: center;">
+                    <div class="hike-box">
+                        <div>
                             <h2>4. Snowdon (Yr Wyddfa), Wales</h2>
                         </div>
-                        <div style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
-                            <div style="text-align: left;"><strong>Location:</strong><br> Snowdonia National Park, Gwynedd</div>
-                            <div style="text-align: left;"><strong>Views:</strong><br> Spectacular scenery from the summit, with panoramic views of Snowdonia, nearby lakes, and the Irish Sea on clear days.</div>
-                            <div style="text-align: left;"><strong>Time Taken to Hike:</strong><br> The hike usually takes around 5 to 7 hours, depending on the route.</div>
-                            <div style="text-align: left;"><strong>Cost:</strong><br> Free access to the mountain, but the Snowdon Mountain Railway to the summit costs around £20 to £40 GBP for a return ticket.</div>
-                            <div style="text-align: left;"><strong>Difficulty:</strong><br> The highest mountain in Wales, with diverse trails offering varying levels of difficulty and the option of taking the Snowdon Mountain Railway to the summit.</div>
+                        <div class="info">
+                            <strong>Location:</strong><br> Snowdonia National Park, Gwynedd
+                            <br><br>
+                            <strong>Views:</strong><br> Spectacular scenery from the summit, with panoramic views of Snowdonia, nearby lakes, and the Irish Sea on clear days.
+                            <br><br>
+                            <strong>Time Taken to Hike:</strong><br> The hike usually takes around 5 to 7 hours, depending on the route.
+                            <br><br>
+                            <strong>Cost:</strong><br> Free access to the mountain, but the Snowdon Mountain Railway to the summit costs around £20 to £40 GBP for a return ticket.
+                            <br><br>
+                            <strong>Difficulty:</strong><br> The highest mountain in Wales, with diverse trails offering varying levels of difficulty and the option of taking the Snowdon Mountain Railway to the summit.
                         </div>
                     </div>
 
                 </div>
 
                 <!-- Explosive Mountains on Right -->
-                <div style="width: 48%; display: flex; flex-direction: column; gap: 20px;">
-
+                <div>
                     <!-- Box for Mount Acatenango -->
-                    <div style="border: 2px solid black; padding: 10px; height: 350px; display: flex; flex-direction: column; justify-content: space-between;">
-                        <div style="text-align: center;">
+                    <div class="hike-box">
+                        <div>
                             <h2>1. Mount Acatenango, Guatemala</h2>
                         </div>
-                        <div style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
-                            <div style="text-align: left;"><strong>Location:</strong><br> Chimaltenango Department</div>
-                            <div style="text-align: left;"><strong>Views:</strong><br> The summit offers incredible views of the Fuego volcano’s eruptions and the surrounding landscape.</div>
-                            <div style="text-align: left;"><strong>Time Taken to Hike:</strong><br> The hike typically takes 6 to 8 hours, depending on the route and pace.</div>
-                            <div style="text-align: left;"><strong>Cost:</strong><br> The cost can vary, but expect around $25 to $40 USD for a guided hike, including transportation and gear.</div>
-                            <div style="text-align: left;"><strong>Difficulty:</strong><br> A demanding hike to the summit with steep ascents and volcanic ash.</div>
+                        <div class="info">
+                            <strong>Location:</strong><br> Chimaltenango Department
+                            <br><br>
+                            <strong>Views:</strong><br> The summit offers incredible views of the Fuego volcano’s eruptions and the surrounding landscape.
+                            <br><br>
+                            <strong>Time Taken to Hike:</strong><br> The hike typically takes 6 to 8 hours, depending on the route and pace.
+                            <br><br>
+                            <strong>Cost:</strong><br> The cost can vary, but expect around $25 to $40 USD for a guided hike, including transportation and gear.
+                            <br><br>
+                            <strong>Difficulty:</strong><br> A demanding hike to the summit with steep ascents and volcanic ash.
                         </div>
                     </div>
 
                     <!-- Box for Cerro Negro -->
-                    <div style="border: 2px solid black; padding: 10px; height: 350px; display: flex; flex-direction: column; justify-content: space-between;">
-                        <div style="text-align: center;">
+                    <div class="hike-box">
+                        <div>
                             <h2>2. Cerro Negro, Nicaragua</h2>
                         </div>
-                        <div style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
-                            <div style="text-align: left;"><strong>Location:</strong><br> León Department</div>
-                            <div style="text-align: left;"><strong>Views:</strong><br> Spectacular views of the volcanic landscape and nearby volcanoes.</div>
-                            <div style="text-align: left;"><strong>Time Taken to Hike:</strong><br> The hike usually takes about 1 to 2 hours to reach the summit.</div>
-                            <div style="text-align: left;"><strong>Cost:</strong><br> The cost for a guided hike and volcano boarding experience ranges from $25 to $40 USD.</div>
-                            <div style="text-align: left;"><strong>Difficulty:</strong><br> A thrilling volcano boarding experience down the black slopes of an active volcano with volcanic ash and heat.</div>
+                        <div class="info">
+                            <strong>Location:</strong><br> León Department
+                            <br><br>
+                            <strong>Views:</strong><br> Spectacular views of the volcanic landscape and nearby volcanoes.
+                            <br><br>
+                            <strong>Time Taken to Hike:</strong><br> The hike usually takes about 1 to 2 hours to reach the summit.
+                            <br><br>
+                            <strong>Cost:</strong><br> The cost for a guided hike and volcano boarding experience ranges from $25 to $40 USD.
+                            <br><br>
+                            <strong>Difficulty:</strong><br> A thrilling volcano boarding experience down the black slopes of an active volcano with volcanic ash and heat.
                         </div>
                     </div>
 
                     <!-- Box for Mount Fuji -->
-                    <div style="border: 2px solid black; padding: 10px; height: 350px; display: flex; flex-direction: column; justify-content: space-between;">
-                        <div style="text-align: center;">
+                    <div class="hike-box">
+                        <div>
                             <h2>3. Mount Fuji, Japan</h2>
                         </div>
-                        <div style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
-                            <div style="text-align: left;"><strong>Location:</strong><br> Honshu Island</div>
-                            <div style="text-align: left;"><strong>Views:</strong><br> Breathtaking panoramic views of the surrounding landscape, including Mount Fuji’s crater at the summit.</div>
-                            <div style="text-align: left;"><strong>Time Taken to Hike:</strong><br> The hike typically takes 5 to 10 hours, depending on the chosen route.</div>
-                            <div style="text-align: left;"><strong>Cost:</strong><br> The cost for climbing Mount Fuji is about $30 USD for a climbing permit during the official season.</div>
-                            <div style="text-align: left;"><strong>Difficulty:</strong><br> A popular yet strenuous climb to Japan's iconic peak, with several routes to choose from and altitude challenges at 3,776 meters (12,389 feet).</div>
+                        <div class="info">
+                            <strong>Location:</strong><br> Honshu Island
+                            <br><br>
+                            <strong>Views:</strong><br> Breathtaking panoramic views of the surrounding landscape, including Mount Fuji’s crater at the summit.
+                            <br><br>
+                            <strong>Time Taken to Hike:</strong><br> The hike typically takes 5 to 10 hours, depending on the chosen route.
+                            <br><br>
+                            <strong>Cost:</strong><br> The cost for climbing Mount Fuji is about $30 USD for a climbing permit during the official season.
+                            <br><br>
+                            <strong>Difficulty:</strong><br> A popular yet strenuous climb to Japan's iconic peak, with several routes to choose from and altitude challenges at 3,776 meters (12,389 feet).
                         </div>
                     </div>
 
                     <!-- Box for Mount Telica -->
-                    <div style="border: 2px solid black; padding: 10px; height: 350px; display: flex; flex-direction: column; justify-content: space-between;">
-                        <div style="text-align: center;">
+                    <div class="hike-box">
+                        <div>
                             <h2>4. Mount Telica, Nicaragua</h2>
                         </div>
-                        <div style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
-                            <div style="text-align: left;"><strong>Location:</strong><br> León Department</div>
-                            <div style="text-align: left;"><strong>Views:</strong><br> Stunning views of the surrounding countryside and nearby volcanoes, with the chance to witness volcanic activity.</div>
-                            <div style="text-align: left;"><strong>Time Taken to Hike:</strong><br> The hike to the summit typically takes about 4 to 5 hours.</div>
-                            <div style="text-align: left;"><strong>Cost:</strong><br> The cost for a guided hike to the summit is around $20 to $30 USD.</div>
-                            <div style="text-align: left;"><strong>Difficulty:</strong><br> A moderate to challenging hike with opportunities to explore an active volcano.</div>
+                        <div class="info">
+                            <strong>Location:</strong><br> León Department
+                            <br><br>
+                            <strong>Views:</strong><br> Amazing views of the surrounding volcanic landscape and nearby volcanoes, with the chance to witness volcanic activity.
+                            <br><br>
+                            <strong>Time Taken to Hike:</strong><br> The hike to the summit typically takes about 4 to 5 hours.
+                            <br><br>
+                            <strong>Cost:</strong><br> The cost for a guided hike to the summit is around $20 to $30 USD.
+                            <br><br>
+                            <strong>Difficulty:</strong><br> A moderate to challenging hike with opportunities to explore an active volcano.
                         </div>
                     </div>
 
